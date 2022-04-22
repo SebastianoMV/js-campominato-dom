@@ -1,0 +1,60 @@
+header{
+  height: 50px;
+}
+
+main{
+  height: calc(100vh - 100px);
+  
+}
+
+footer{
+  height: 50px;
+}
+
+header .container img{
+  width: 200px;
+}
+
+.main-wrapper{
+  background-color: chocolate;
+  height: 100%;
+}
+
+.smv-container{
+  width: 500px;
+  height: 500px;
+  border: 2px solid white;
+}
+
+.square{    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  color: white;
+}  
+
+.square100{
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+}
+
+.square81{
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+
+.square49{
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+}
+
+.square.clicked{
+  background-color: rgb(212, 168, 137);
+  color: brown;
+}
+
+.square.bomba{
+  background-color: brown;
+  color: rgb(212, 168, 137);
+}
