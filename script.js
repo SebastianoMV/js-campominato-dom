@@ -1,21 +1,24 @@
 document.querySelector('#start').addEventListener('click',init);
 const NumeroBombe = 16;
 const container = document.querySelector('.smv-container');
-const main = document.querySelector('main');
 let Bombe =[];
 let c = 0;
 
 function init(){
   container.innerHTML = '';
+  c = 0;
+  container.classList.remove('endgame');
+  document.querySelector('h2').innerHTML = '';
+  document.querySelector('h3').innerHTML = `Punteggio:${c} `;
   const difficolta = document.getElementById('difficolta').value;
   createGame(difficolta);
-  
 }
 
 function createGame(difficolta){
    Bombe = generateBombe(difficolta);
    console.log(Bombe);
-   for(let i = 0; i < difficolta; i++){
+
+   for(let i = 1; i <= difficolta; i++){
      const sq = createSquare(container,difficolta)
      sq.innerHTML = `<span>${i}</span>`;
      sq.numero = i;
@@ -53,14 +56,14 @@ function ClickedFun(){
    if (Bombe.includes(this.numero)){
       this.classList.add('bomba');
       document.querySelector('h2').innerHTML = 'Hai perso!'
+      container.classList.add('endgame');
    }else{
-       this.classList.add('clicked');
-       c++;
-       document.querySelector('h3').innerHTML = `Punteggio:${c} `
+      this.classList.add('clicked');
+      c++;
+      document.querySelector('h3').innerHTML = `Punteggio:${c} `
    }
-
 }
 
-function endGame(difficolta){
-   
+function reset(){
+   container.classList.add('endgame');
 }
